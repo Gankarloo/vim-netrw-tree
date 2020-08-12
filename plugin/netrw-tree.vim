@@ -52,3 +52,11 @@ augroup NetrwGroup
   autocmd! BufEnter * call NormalizeWidths()
 augroup END
 
+augroup NetrwESC
+  autocmd!
+  autocmd FileType netrw :nmap <silent><expr> <ESC> 
+  \ popup_findpreview() ? popup_close(popup_findpreview()) : 
+  \ "\<ESC>"
+augroup END
+
+
